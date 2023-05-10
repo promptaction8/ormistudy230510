@@ -1,0 +1,36 @@
+# 질문 : id를 객체가 아니라 count라는 정수값을 지정해줘서 증가시키고 싶습니다.
+# 답 : 아래코드처럼 사용하시면 됩니다.
+class BlogFactory(object):
+
+    count = 0
+
+    def __init__(self, 제목, 내용, 조회수, 글쓴이, 생성날짜):
+        BlogFactory.count += 1
+        self.id = BlogFactory.count
+        self.title = 제목
+        self.content = 내용
+        self.count = 조회수
+        self.writer = 글쓴이
+        self.create_date = 생성날짜
+
+    def __str__(self):
+        return f'{self.id}. 제목 : {self.title}, 내용 : {self.content[:5]}'
+
+게시글1 = BlogFactory(
+        '오늘 제주의 날씨',
+        '오늘 제주의 날씨는 참 좋네요! 블라블라',
+        '0',
+        '이호준',
+        '2023/05/10',
+    )
+
+게시글2 = BlogFactory(
+        '오늘 부산의 날씨',
+        '오늘 부산의 날씨는 참 좋네요! 블라블라',
+        '1000000',
+        '김재현',
+        '2023/05/10',
+    )
+
+print(게시글1)
+print(게시글2)
