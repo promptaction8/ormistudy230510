@@ -1,0 +1,66 @@
+# 중요한 예제입니다.
+class BlogFactory(object):
+    dataset = []
+
+    def __init__(self, 제목, 내용, 조회수, 글쓴이, 생성날짜):
+        self.title = 제목
+        self.content = 내용
+        self.count = 조회수
+        self.writer = 글쓴이
+        self.create_date = 생성날짜
+        self.dataset.append(self)
+
+    def __str__(self):
+        return f'{len(self.dataset)}. 제목 : {self.title}, 내용 : {self.content[:5]}, 글쓴이 : {self.writer}'
+
+게시글1 = BlogFactory(
+        '오늘 제주의 날씨',
+        '오늘 제주의 날씨는 참 좋네요! 블라블라',
+        '0',
+        '이호준',
+        '2023/05/10',
+    )
+print(게시글1)
+
+게시글2 = BlogFactory(
+        '오늘 부산의 날씨',
+        '오늘 부산의 날씨는 참 좋네요! 블라블라',
+        '1000000',
+        '김재현',
+        '2023/05/10',
+    )
+print(게시글2
+--------------------------------------------------------------------------------------------------------------
+# 중요한 예제입니다.
+class BlogFactory(object):
+    dataset = []
+
+    def __init__(self, 제목, 내용, 조회수, 글쓴이, 생성날짜):
+        self.title = 제목
+        self.content = 내용
+        self.count = 조회수
+        self.writer = 글쓴이
+        self.create_date = 생성날짜
+        self.dataset.append(self)
+
+    def __str__(self):
+        return f'제목 : {self.title}, 내용 : {self.content[:5]}, 글쓴이 : {self.writer}'
+
+게시글1 = BlogFactory(
+        '오늘 제주의 날씨',
+        '오늘 제주의 날씨는 참 좋네요! 블라블라',
+        '0',
+        '이호준',
+        '2023/05/10',
+    )
+
+게시글2 = BlogFactory(
+        '오늘 부산의 날씨',
+        '오늘 부산의 날씨는 참 좋네요! 블라블라',
+        '1000000',
+        '김재현',
+        '2023/05/10',
+    )
+
+print(게시글1)
+print(게시글2)
