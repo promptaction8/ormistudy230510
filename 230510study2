@@ -1,0 +1,101 @@
+class Car(object):
+    maxSpeed = 300
+    maxPeople = 5
+    def move(self, x):
+        print(x, '의 스피드로 달리고 있습니다.')
+    def stop(self):
+        print('멈췄습니다.')
+
+class HybridCar(Car):
+    battery = 1000
+    batteryKM = 300
+
+class ElectricCar(HybridCar):
+    battery = 2000
+    batteryKM = 600
+    
+    
+    -------------------------------------------------------------------------------------------------------------
+    class Car(object):
+    MaxSpeed = 300
+    MaxPeoeple = 5
+    def __init__(self):
+        pass
+    def move(self, x):
+        pass
+    def stop(self):
+        print('멈췄습니다.')
+    @staticmethod #decorator
+    def 스피드배속(현재스피드, 배속할스피드):
+        print(f'현재 {현재스피드 * 배속할스피드}의 스피드로 달리고 있습니다.')
+
+Car.스피드배속(100, 2)
+-----------------------------------------------------------------------------
+# 1번째 스탭
+# 공개되는 정보, 공개되지 않는 정보
+# 멤버(정적 수치, 문자열)와 메서드(기능)
+class Product(object):
+    def __init__(self, 품명, 가격):
+        self.product_name = 품명
+        self.price = 가격
+        
+자전거 = Product(
+    '자전거',
+    100000,
+)
+
+class UserInfo(object):
+    def __init__(self, 
+                 이름, 
+                 이메일,
+                 비밀번호, 
+                 주요접속기기, 
+                 주요접속국가, 
+                 주요접속지역, 
+                 마지막접속일자, 
+                 회원가입날짜, 
+                 별명, 
+                 적립금, 
+                 생일, 
+                 휴대폰번호, 
+                 휴대폰인증여부, 
+                 고객등급, 
+                 휴면계정여부):
+        self.이름 = 이름
+        self.고객등급 = 고객등급
+        self.적립금 = 적립금
+    
+    def 물품구매(self, product):
+        self.적립금 -= product.price
+
+    def 회원탈퇴(self):
+        pass
+
+    def 장바구니등록(self):
+        pass
+
+이호준 = UserInfo(
+    이름 = '이호준',
+    이메일 = 'hojun@gmail.com',
+    비밀번호 = '98d234db7e91f5ba026a25d0d6f17bc5ee0a347ea2216b0c9de06d43536d49f4',
+    주요접속기기 = 'Android',
+    주요접속국가 = 'Korea',
+    주요접속지역 = 'Jeju',
+    마지막접속일자 = '23/05/10',
+    회원가입날짜 = '23/05/10',
+    별명 = '준',
+    적립금 = 1000000000,
+    생일 = '13/13',
+    휴대폰번호 = '010-0000-0000',
+    휴대폰인증여부 = True,
+    고객등급 = 'VIP',
+    휴면계정여부 = False,
+)
+
+이호준.물품구매(자전거)
+이호준.적립금
+import hashlib
+
+비밀번호 = hashlib.sha256()
+비밀번호.update('helloworld!'.encode('utf-8'))
+비밀번호.hexdigest() # 영화를 집어넣든, 음악을 집어넣든, 소설을 집어넣든, 암호를 집어넣든 모두 64자로 만듭니다.
